@@ -10,6 +10,7 @@ function install_aur_package() {
 mkdir ~/AUR &>/dev/null
 
 sudo pacman -S --noconfirm git neovim python python-pynvim zsh base-devel fzf \
+                           clang \
   && install_aur_package zsh-theme-powerlevel10k-git \
   && install_aur_package neovim-plug \
   && nvim --headless +PlugInstall +qa
