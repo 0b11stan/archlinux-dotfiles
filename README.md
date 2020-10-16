@@ -17,3 +17,8 @@ pacman -S --noconfirm sudo \
   && echo 'tristan ALL=(ALL) ALL' > /etc/sudoers.d/10-tristan \
   && passwd tristan
 ```
+
+Todo script à curl:
+* install git
+* `mkdir -p ~/repos/perso/`
+* `git clone https://github.com/0b11stan/dotfiles.git ~/repos/perso/dotfiles`
