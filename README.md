@@ -9,3 +9,11 @@
 | Editor            | [neovim](https://github.com/neovim/neovim)                |
 | Browser           | [qutebrowser](https://github.com/qutebrowser/qutebrowser) |
 | Password Manager  | [pass](https://www.passwordstore.org/#download)           |
+
+Before playing any scripts:
+```bash
+pacman -S --noconfirm sudo \
+  && useradd -m tristan \
+  && echo 'tristan ALL=(ALL) ALL' > /etc/sudoers.d/10-tristan \
+  && passwd tristan
+```
