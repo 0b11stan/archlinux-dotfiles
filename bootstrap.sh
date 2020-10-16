@@ -1,5 +1,5 @@
 if [[ $(id -u) -eq 0 ]]
-then pacman -Syu \
+then pacman -Syu --noconfirm \
     && pacman -S --noconfirm sudo git openssh \
     && useradd -m tristan \
     && echo 'tristan ALL=(ALL) ALL' > /etc/sudoers.d/10-tristan \
