@@ -1,3 +1,6 @@
+alias ls="ls --color"
+alias l="ls -l"
+
 alias setperformance="sudo cpupower frequency-set -g performance"
 alias setpowersave="sudo cpupower frequency-set -g powersave"
 alias hma="sudo /usr/local/bin/hma-vpn.sh"
