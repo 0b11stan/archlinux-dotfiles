@@ -10,13 +10,17 @@
 | Browser           | [qutebrowser](https://github.com/qutebrowser/qutebrowser) |
 | Password Manager  | [pass](https://www.passwordstore.org/#download)           |
 
-Before playing any scripts:
+## Usage
+
 ```bash
-pacman -S --noconfirm sudo \
-  && useradd -m tristan \
-  && echo 'tristan ALL=(ALL) ALL' > /etc/sudoers.d/10-tristan \
-  && passwd tristan
+  docker run -it archlinux bash -ic "$(curl https://sta.tic.sh/bootstrap.sh)"
 ```
 
-TODO :
-* Automate nvim => `:PugInstall`
+Should be prompted 5 times :
+* 2 for tristan's new password
+* 1 for using sudo as tristan
+* 2 for generating a new ssh key for this new host
+
+## TODO :
+
+* Add a bootstrap script only for terminal sessions without the arch specifics

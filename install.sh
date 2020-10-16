@@ -1,5 +1,3 @@
-# openssh networkmanager gnu-netcat 
-
 function install_aur_package() {
   git clone https://aur.archlinux.org/$1.git ~/AUR/$1 &>/dev/null && {
     echo installing $1... \
@@ -13,7 +11,8 @@ mkdir ~/AUR &>/dev/null
 
 sudo pacman -S --noconfirm git neovim python python-pynvim zsh base-devel fzf \
   && install_aur_package zsh-theme-powerlevel10k-git \
-  && install_aur_package neovim-plug
+  && install_aur_package neovim-plug \
+  && nvim --headless +PlugInstall +qa
   
 ln -s ~/repos/perso/dotfiles/config ~/.config &>/dev/null
 ln -s ~/repos/perso/dotfiles/p10k.zsh ~/.p10k.zsh &>/dev/null
