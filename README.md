@@ -18,7 +18,5 @@ pacman -S --noconfirm sudo \
   && passwd tristan
 ```
 
-Todo script à curl:
-* install git
-* `mkdir -p ~/repos/perso/`
-* `git clone https://github.com/0b11stan/dotfiles.git ~/repos/perso/dotfiles`
+TODO :
+* Automate nvim => `:PugInstall`

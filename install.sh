@@ -15,8 +15,8 @@ sudo pacman -S --noconfirm git neovim python python-pynvim zsh base-devel fzf \
   && install_aur_package zsh-theme-powerlevel10k-git \
   && install_aur_package neovim-plug
   
-ln -s ~/repos/perso/dotfiles/config ~/.config
-ln -s ~/repos/perso/dotfiles/p10k.zsh ~/.p10k.zsh
-ln -s ~/repos/perso/dotfiles/zshrc ~/.zshrc
+ln -s ~/repos/perso/dotfiles/config ~/.config &>/dev/null
+ln -s ~/repos/perso/dotfiles/p10k.zsh ~/.p10k.zsh &>/dev/null
+ln -s ~/repos/perso/dotfiles/zshrc ~/.zshrc &>/dev/null
 
 sudo chsh -s /usr/bin/zsh $USER
