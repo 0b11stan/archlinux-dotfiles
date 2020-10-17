@@ -15,7 +15,7 @@
 ### OUTPUT CONFIGURATION
 
     # wallpaper
-    output * bg /home/tristan/Documents/wallpapers/evil_corp.png fill
+    output * bg ~/.config/sway/wallpapers/evil_corp.png fill
 
     # configure HiDPI (for 4k screen)
     output eDP-1 pos 0 0

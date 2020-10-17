@@ -13,7 +13,7 @@
 ## Usage
 
 ```bash
-  docker run -it archlinux bash -ic "$(curl https://sta.tic.sh/bootstrap.sh)"
+  docker run -it archlinux bash -ic "$(curl https://sta.tic.sh/bootstrap)"
 ```
 
 Should be prompted 5 times :

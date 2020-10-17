@@ -6,11 +6,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source ~/.config/zsh/config.sh
 source ~/.config/zsh/aliases.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-if [ "$(tty)" = "/dev/tty1" ]; then exec sway; fi
+if [ "$(tty)" = "/dev/tty1" ]; then
+  exec sway
+else
+ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+fi
