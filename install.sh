@@ -4,7 +4,7 @@ mkdir ~/AUR ~/.config &>/dev/null
 
 sudo pacman -S --noconfirm git neovim python python-pynvim zsh base-devel fzf \
                            clang \
-  && ./sync_aur_packages.sh \
+  && ./syncaur.sh \
   && nvim --headless +PlugInstall +qa
   
 for app in $(ls config); do
