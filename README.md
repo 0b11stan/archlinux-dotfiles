@@ -23,7 +23,5 @@ Should be prompted 5 times :
 
 ## TODO :
 
-* Fix link problème when runing install.sh multiple times
-* Add https://github.com/zsh-users/zsh-autosuggestions
 * Add https://github.com/marlonrichert/zsh-autocomplete
 * Add a bootstrap script only for terminal sessions without the arch specifics
