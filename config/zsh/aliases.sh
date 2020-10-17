@@ -1,4 +1,4 @@
-alias ls="ls --color"
+alias ls="ls --color=auto"
 alias l="ls -l"
 
 alias setperformance="sudo cpupower frequency-set -g performance"
@@ -14,4 +14,5 @@ alias voidpull="rsync --verbose --archive --delete void.tic.sh:/srv/storage ~"
 alias hail="ls -hAil"
 alias vim="nvim +NERDTree"
 alias config="pushd ~/repos/perso/dotfiles && nvim +NERDTree install.sh && popd"
+alias syncaur="pushd ~/repos/perso/dotfiles/ && ./syncaur.sh && popd"
 #alias virsh="virsh --connect qemu:///system"

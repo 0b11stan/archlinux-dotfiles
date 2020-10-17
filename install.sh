@@ -1,20 +1,10 @@
-function install_aur_package() {
-  git clone https://aur.archlinux.org/$1.git ~/AUR/$1 &>/dev/null && {
-    echo installing $1... \
-      && pushd ~/AUR/$1 \
-      && makepkg -si --noconfirm
-    popd 
-  } || echo $1 already installed
-}
-
+#!/bin/bash
 
 mkdir ~/AUR ~/.config &>/dev/null
 
 sudo pacman -S --noconfirm git neovim python python-pynvim zsh base-devel fzf \
                            clang \
-  && install_aur_package neovim-plug \
-  && install_aur_package zsh-theme-powerlevel10k-git \
-  && install_aur_package zsh-fast-syntax-highlighting \
+  && sync_aur_packages \
   && nvim --headless +PlugInstall +qa
   
 for app in $(ls config); do
