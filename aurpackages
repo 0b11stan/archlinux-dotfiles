@@ -1,4 +1,4 @@
 teams
 neovim-plug
-zsh-theme-powerlevel10k-git
 zsh-fast-syntax-highlighting
+zsh-autocomplete

@@ -1,5 +1,8 @@
 alias ls="ls --color=auto"
 alias l="ls -l"
+alias gst="git status"
+alias gd="git diff"
+alias gam="git commit -am"
 
 alias setperformance="sudo cpupower frequency-set -g performance"
 alias setpowersave="sudo cpupower frequency-set -g powersave"
@@ -13,6 +16,7 @@ alias voidpush="rsync --verbose --archive --delete -e 'ssh -p 2455' ~/storage vo
 alias voidpull="rsync --verbose --archive --delete -e 'ssh -p 2455' void.tic.sh:/srv/storage ~"
 alias hail="ls -hAil"
 alias vim="nvim +NERDTree"
-alias config="pushd ~/repos/perso/dotfiles && nvim +NERDTree install.sh && popd"
+alias config="cd ~/repos/perso/dotfiles && nvim +NERDTree install.sh"
 alias syncaur="pushd ~/repos/perso/dotfiles/ && ./syncaur.sh && popd"
+alias blackarchsearch="pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u | grep"
 #alias virsh="virsh --connect qemu:///system"

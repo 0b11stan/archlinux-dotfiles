@@ -12,6 +12,7 @@ install_aur_package() {
 # remove unused packages
 for package in $(ls ~/AUR | grep -vf aurpackages); do
   rm -vrf ~/AUR/$package;
+  pacman -Rns $package
 done
 
 # install only uninstalled packages

@@ -36,3 +36,6 @@ fzfhistory() {
 }
 zle -N fzfhistory fzfhistory
 bindkey -M viins '^R' fzfhistory
+
+# zsh autosuggestion
+bindkey -M viins '^[[Z' autosuggest-accept

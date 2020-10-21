@@ -2,13 +2,20 @@
 
 mkdir ~/AUR ~/.config &>/dev/null
 
-sudo pacman -S --noconfirm git neovim python python-pynvim zsh base-devel fzf \
-                           clang \
+zshplugins="zsh-autosuggestions zsh-theme-powerlevel10k"
+
+requirements="git neovim python python-pynvim zsh base-devel fzf clang
+              ttf-droid rsync autopep8"
+
+sudo pacman -S --noconfirm $requirements $zshplugins \
   && ./syncaur.sh \
-  && nvim --headless +PlugInstall +qa
+  && git config --global user.email "tristan@tic.sh" \
+  && git config --global user.name "Tristan Pinaudeau"
+  #&& nvim --headless +PlugInstall +qa \
   
 for app in $(ls config); do
-  ln -s ~/repos/perso/dotfiles/config/$app ~/.config/$app &>/dev/null
+  test -L ~/.config/$app \
+  || ln -s ~/repos/perso/dotfiles/config/$app ~/.config/$app &>/dev/null
 done
 ln -s ~/repos/perso/dotfiles/p10k.zsh ~/.p10k.zsh &>/dev/null
 ln -s ~/repos/perso/dotfiles/zshrc ~/.zshrc &>/dev/null
