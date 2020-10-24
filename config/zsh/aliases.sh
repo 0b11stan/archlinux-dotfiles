@@ -6,7 +6,6 @@ alias gam="git commit -am"
 
 alias setperformance="sudo cpupower frequency-set -g performance"
 alias setpowersave="sudo cpupower frequency-set -g powersave"
-alias hma="sudo /usr/local/bin/hma-vpn.sh"
 alias backlight="sudo tee /sys/class/backlight/intel_backlight/brightness <<<"
 alias meteo="curl http://wttr.in/"
 alias temperature="curl http://v2.wttr.in/"
