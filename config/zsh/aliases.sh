@@ -21,4 +21,5 @@ alias blackarchsearch="pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u | 
 alias todo="nvim ~/storage/private/TODO.txt"
 alias toread="nvim ~/storage/private/TOREAD.txt"
 alias towatch="nvim ~/storage/private/TOWATCH.txt"
+alias cdsvpn="pushd ~/repos/cdiscount/docker-citrix-master && docker run --rm --privileged -it --network=host --env-file=config -v /etc/resolv.conf:/etc/resolv.conf docker-registry.cdweb.biz/sre/citrix:1.0.0.138; popd"
 #alias virsh="virsh --connect qemu:///system"
