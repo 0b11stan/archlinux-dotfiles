@@ -23,8 +23,9 @@ bindkey -M vicmd 'l' vi-up-line-or-history
 bindkey -M vicmd 'm' vi-forward-char
 fzfhistory() {
   BUFFER=$(history 0 \
+    | sort -k 2 -u \
+    | sort -n \
     | cut -c 8- \
-    | sort -u \
     | fzf --tac \
           --reverse \
           --info=hidden \
