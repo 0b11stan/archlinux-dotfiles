@@ -21,5 +21,6 @@ done
 link ~/repos/perso/dotfiles/p10k.zsh ~/.p10k.zsh
 link ~/repos/perso/dotfiles/zshrc ~/.zshrc
 link ~/repos/perso/dotfiles/qute_userscripts ~/.local/share/qutebrowser/userscripts
+link ~/repos/perso/dotfiles/qute_config.py ~/.config/qutebrowser/config.py
 
 sudo chsh -s /usr/bin/zsh $USER

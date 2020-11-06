@@ -2,16 +2,15 @@
 
 filepath=$1
 
-if [ -z $filepath ]; then return; fi
+tab=$(echo $QUTE_URL | grep http://localhost)
+if [ -z $filepath ] || [ -z $tab ]; then exit; fi
 
 old=$(stat -c %X $filepath)
 
 while true; do
+  sleep 1
   new=$(stat -c %X $filepath)
   if [ $old -eq $new ]; then continue; fi
   old=$new
-  if [ $(echo $QUTE_URL | grep http://localhost) ]; then
-    echo "reload" >> "$QUTE_FIFO"
-  fi
-  sleep 1
+  echo "reload" >> "$QUTE_FIFO"
 done
