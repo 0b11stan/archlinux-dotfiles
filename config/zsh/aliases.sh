@@ -1,3 +1,4 @@
+alias grep="grep --color"
 alias ls="ls --color=auto"
 alias l="ls -l"
 alias gst="git status"

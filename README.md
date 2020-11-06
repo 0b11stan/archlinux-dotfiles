@@ -23,5 +23,4 @@ Should be prompted 5 times :
 
 ## TODO :
 
-* Add https://github.com/marlonrichert/zsh-autocomplete
 * Add a bootstrap script only for terminal sessions without the arch specifics
