@@ -15,12 +15,15 @@ sudo pacman -S --needed --noconfirm $requirements $zshplugins \
   
 link() { test -L $2 || ln -s $1 $2; }
 
+mkdir -p ~/.config/nvim
+
 for app in $(ls config); do
   link ~/repos/perso/dotfiles/config/$app ~/.config/$app
 done
-link ~/repos/perso/dotfiles/p10k.zsh ~/.p10k.zsh
-link ~/repos/perso/dotfiles/zshrc ~/.zshrc
+link ~/repos/perso/dotfiles/rcfiles/p10k.zsh ~/.p10k.zsh
+link ~/repos/perso/dotfiles/rcfiles/zshrc ~/.zshrc
+link ~/repos/perso/dotfiles/rcfiles/qute_config.py ~/.config/qutebrowser/config.py
+link ~/repos/perso/dotfiles/rcfiles/nvim_init.vim ~/.config/nvim/init.vim
 link ~/repos/perso/dotfiles/qute_userscripts ~/.local/share/qutebrowser/userscripts
-link ~/repos/perso/dotfiles/qute_config.py ~/.config/qutebrowser/config.py
 
 sudo chsh -s /usr/bin/zsh $USER

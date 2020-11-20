@@ -96,28 +96,19 @@ config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{w
 config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99 Safari/537.36', 'https://*.slack.com/*')
 
 # Load images automatically in web pages.
-# Type: Bool
 config.set('content.images', True, 'chrome-devtools://*')
-
-# Load images automatically in web pages.
-# Type: Bool
 config.set('content.images', True, 'devtools://*')
 
-# Enable JavaScript.
-# Type: Bool
+# Enable JavaScript (whitelist)
 config.set('content.javascript.enabled', True, 'chrome-devtools://*')
-
-# Enable JavaScript.
-# Type: Bool
 config.set('content.javascript.enabled', True, 'devtools://*')
-
-# Enable JavaScript.
-# Type: Bool
 config.set('content.javascript.enabled', True, 'chrome://*/*')
-
-# Enable JavaScript.
-# Type: Bool
 config.set('content.javascript.enabled', True, 'qute://*/*')
+config.set('content.javascript.enabled', True, '*://*.twitter.com/*')
+config.set('content.javascript.enabled', True, '*://*.duckduckgo.com/')
+
+# By default all javascript content is disabled
+config.set('content.javascript.enabled', False)
 
 # Bindings for normal mode
 config.bind('J', 'back')
@@ -127,3 +118,4 @@ config.bind('M', 'forward')
 config.bind('j', 'scroll left')
 config.bind('k', 'scroll down')
 config.bind('l', 'scroll up')
+config.bind('m', 'scroll right')

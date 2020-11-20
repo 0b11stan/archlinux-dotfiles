@@ -21,6 +21,10 @@ bindkey -M vicmd 'j' vi-backward-char
 bindkey -M vicmd 'k' vi-down-line-or-history
 bindkey -M vicmd 'l' vi-up-line-or-history
 bindkey -M vicmd 'm' vi-forward-char
+bindkey -M visual 'j' vi-backward-char
+bindkey -M visual 'k' vi-down-line-or-history
+bindkey -M visual 'l' vi-up-line-or-history
+bindkey -M visual 'm' vi-forward-char
 fzfhistory() {
   BUFFER=$(history 0 \
     | sort -k 2 -u \
