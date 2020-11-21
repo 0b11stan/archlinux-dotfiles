@@ -105,7 +105,9 @@ config.set('content.javascript.enabled', True, 'devtools://*')
 config.set('content.javascript.enabled', True, 'chrome://*/*')
 config.set('content.javascript.enabled', True, 'qute://*/*')
 config.set('content.javascript.enabled', True, '*://*.twitter.com/*')
-config.set('content.javascript.enabled', True, '*://*.duckduckgo.com/')
+config.set('content.javascript.enabled', True, '*://*.duckduckgo.com/*')
+config.set('content.javascript.enabled', True, '*://*.youtube.com/*')
+config.set('content.javascript.enabled', True, '*://*.linkedin.com/*')
 
 # By default all javascript content is disabled
 config.set('content.javascript.enabled', False)
