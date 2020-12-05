@@ -6,6 +6,7 @@ set shiftwidth=2
 set colorcolumn=81
 set cursorline
 
+autocmd BufNewFile,BufRead *.s set syntax=asm
 hi CursorLine   cterm=NONE ctermbg=238
 hi CursorColumn cterm=NONE ctermbg=238
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
