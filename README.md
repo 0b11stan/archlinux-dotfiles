@@ -1,5 +1,7 @@
 # dotfiles
 
+![Screenshot](/rice.png)
+
 | Component         | Sources                                                   |
 |-------------------|----------------------------------------------------------:|
 | Window manager    | [sway](https://github.com/swaywm/sway)                    |
