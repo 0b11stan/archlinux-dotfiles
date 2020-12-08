@@ -13,6 +13,7 @@ sudo pacman -S --needed --noconfirm $requirements $zshplugins \
   && git config --global user.name "Tristan Pinaudeau"
   #&& nvim --headless +PlugInstall +qa \
   
+# maybe use stow instead ? http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html
 link() { test -L $2 || ln -s $1 $2; }
 
 mkdir -p ~/.config/nvim

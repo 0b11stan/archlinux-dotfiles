@@ -54,15 +54,16 @@
 
 ### LOOK
 
-    default_border none
+    default_border pixel 3
     gaps outer 5
     gaps inner 20
     smart_gaps on
+		hide_edge_borders smart
 
     # class                 border  backgr. text    indicator child_border
-    client.focused          #777777 #444444 #ffffff #2e9ef4   #285577
-    client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-    client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+    client.focused          #777777 #444444 #ffffff #aaaaaa   #aaaaaa
+    client.focused_inactive #333333 #5f676a #ffffff #64727d   #64727d
+    client.unfocused        #333333 #222222 #888888 #64727d   #64727d
     client.urgent           #2f343a #900000 #ffffff #900000   #900000
     client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
