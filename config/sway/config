@@ -42,6 +42,11 @@
         xkb_layout fr
     }
 
+    #input 65261:4871:ZSA_Ergodox_EZ {
+    #    xkb_layout us
+    #}
+
+
     # configure touchpad input with tap and inverted scroll
     input 2:7:SynPS/2_Synaptics_TouchPad {
        tap enabled
