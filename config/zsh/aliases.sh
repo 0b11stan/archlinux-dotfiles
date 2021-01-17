@@ -26,4 +26,5 @@ alias todo="nvim ~/storage/private/TODO.txt"
 alias toread="nvim ~/storage/private/TOREAD.txt"
 alias towatch="nvim ~/storage/private/TOWATCH.txt"
 alias cdsvpn="pushd ~/repos/cdiscount/docker-citrix && docker run --rm --privileged -it --network=host --env-file=config --name=citrix_vpn --volume=/etc/resolv.conf:/etc/resolv.conf docker-registry.cdweb.biz/sre/citrix:b4533cb"
+alias screenshot='grim -g "$(slurp)" /tmp/$(date +screenshot-%s.png)'
 #alias virsh="virsh --connect qemu:///system"
