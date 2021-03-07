@@ -5,6 +5,7 @@ alias gst="git status"
 alias gd="git diff"
 alias gam="git commit -am"
 alias detox="detox -s lower *"
+alias tree="tree -C"
 cdx() {cd $1; ls -l;}; alias cd="cdx"
 
 alias setperformance="sudo cpupower frequency-set -g performance"
