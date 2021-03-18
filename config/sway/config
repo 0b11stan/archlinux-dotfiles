@@ -17,7 +17,7 @@
 
     # wallpaper
     #output * bg ~/.config/sway/wallpapers/evil_corp.png fill
-    exec ls /usr/share/backgrounds/archlinux/*.??g \
+    exec ls ~/storage/wallpapers/*.??g \
          | sort -R | head -n 1 | xargs swaybg -i 
 
     # configure HiDPI (for 4k screen)
