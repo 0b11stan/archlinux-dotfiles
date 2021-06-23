@@ -5,7 +5,7 @@ mkdir ~/AUR ~/.config &>/dev/null
 zshplugins="zsh-autosuggestions zsh-theme-powerlevel10k"
 
 requirements="git neovim python python-pynvim zsh base-devel fzf clang
-              rsync autopep8 ttf-hack stow"
+              rsync autopep8 ttf-hack stow alacritty"
 
 sudo pacman -S --needed --noconfirm $requirements $zshplugins \
   && ./syncaur.sh \
