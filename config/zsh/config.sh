@@ -5,6 +5,7 @@ export BROWSER=/usr/bin/qutebrowser
 export SAVEHIST=100000
 export HISTSIZE=100000
 export HISTFILE=~/.zsh_history
+export PATH=$PATH:~/.emacs.d/bin:~/.cargo/bin
 
 # enable screen sharing for webrtc
 export XDG_SESSION_TYPE=wayland
