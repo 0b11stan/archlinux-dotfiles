@@ -10,6 +10,9 @@ export HISTFILE=~/.zsh_history
 export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=sway
 
+# doom emacs
+export PATH=$PATH:~/.emacs.d/bin/
+
 # cdiscount specific
 export CMDB_HOST=https://this.subdomain.com
 export CMDB_CLIENT_ID=youwhishyouknew

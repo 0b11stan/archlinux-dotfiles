@@ -1,3 +1,4 @@
+swaylock-blur-bin
 teams
 neovim-plug
 zsh-fast-syntax-highlighting
@@ -7,3 +8,7 @@ zsa-wally-cli
 virtualbox-ext-oracle
 vmware-keymaps
 vmware-workstation
+flutter
+android-studio
+sops-git
+obsidian

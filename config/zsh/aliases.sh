@@ -6,6 +6,7 @@ alias gd="git diff"
 alias gam="git commit -am"
 alias detox="detox -s lower *"
 alias tree="tree -C"
+
 cdx() {cd $1; ls -l;}; alias cd="cdx"
 
 alias setperformance="sudo cpupower frequency-set -g performance"
@@ -30,3 +31,16 @@ alias cdsvpn="pushd ~/repos/cdiscount/docker-citrix && docker run --rm --privile
 alias screenshot='grim -g "$(slurp)" /tmp/$(date +screenshot-%s.png)'
 #alias virsh="virsh --connect qemu:///system"
 alias safeshutdown='voidpush && sudo pacman -Syu && shutdown now'
+
+# ALIASES DOCKER
+alias dockerstart="sudo systemctl start docker"
+alias dockerstop="sudo systemctl stop docker"
+alias dockerrestart="sudo systemctl restart docker"
+alias dockerstatus="sudo systemctl status docker"
+alias dcu="docker-compose up"
+alias dcub="docker-compose up --build"
+alias dcd="docker-compose down"
+alias dcdv="docker-compose down --volumes"
+alias dstopall='docker stop docker ps -a -q'
+alias drmall='docker rm docker ps -a -q'
+alias dgenocide="dstopall && drmall"
