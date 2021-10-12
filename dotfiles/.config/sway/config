@@ -17,10 +17,11 @@
 
     # wallpaper
     #output * bg ~/.config/sway/wallpapers/evil_corp.png fill
-    exec ls ~/storage/wallpapers/*.??g | sort -R | head -n 1 | xargs swaybg -i
+    #exec ls ~/storage/wallpapers/*.??g | sort -R | head -n 1 | xargs swaybg -i
 
-    # configure HiDPI (for 4k screen)
-    output eDP-1 pos 0 0
+		output DP-3 	pos 0		 0
+		output DP-4 	pos 1920 0
+		output eDP-1	pos 3840 0
 
     # configure HDMI output
     #output HDMI-A-1 scale 2

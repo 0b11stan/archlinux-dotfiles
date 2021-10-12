@@ -32,22 +32,23 @@ bindkey -M visual 'j' vi-backward-char
 bindkey -M visual 'k' vi-down-line-or-history
 bindkey -M visual 'l' vi-up-line-or-history
 bindkey -M visual 'm' vi-forward-char
-fzfhistory() {
-  BUFFER=$(history 0 \
-    | sort -k 2 -u \
-    | sort -n \
-    | cut -c 8- \
-    | fzf --tac \
-          --reverse \
-          --info=hidden \
-          --height=10 \
-          --bind=tab:down \
-          --prompt='| ' \
-  )
-  zle end-of-line
-}
-zle -N fzfhistory fzfhistory
-bindkey -M viins '^R' fzfhistory
+#fzfhistory() {
+#  BUFFER=$(history 0 \
+#    | sort -k 2 -u \
+#    | sort -n \
+#    | cut -c 8- \
+#    | fzf --tac \
+#          --reverse \
+#          --info=hidden \
+#          --height=10 \
+#          --bind=tab:down \
+#          --prompt='| ' \
+#  )
+#  zle end-of-line
+#}
+#zle -N fzfhistory fzfhistory
+#bindkey -M viins '^R' fzfhistory
+bindkey -M viins '^R' history-incremental-search-backward
 
 # zsh autosuggestion
 bindkey -M viins '^[[Z' autosuggest-accept
