@@ -8,9 +8,9 @@ fi
 # Load plugins
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-#source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # Load custom conf and aliases
+source ~/.vars.sh || "File ~/.vars.sh not found"
 source ~/.config/zsh/config.sh
 source ~/.config/zsh/aliases.sh
 
@@ -21,7 +21,8 @@ autoload -Uz compinit && compinit
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 if [ "$(tty)" = "/dev/tty1" ]; then
+  test $SELF_IS_VIRTUALIZED -eq 1 && export WLR_RENDERER_ALLOW_SOFTWARE=1
   exec sway
 else
- source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+  source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 fi
