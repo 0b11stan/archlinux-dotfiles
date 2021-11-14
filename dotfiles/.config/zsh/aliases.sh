@@ -9,7 +9,7 @@ alias tree="tree -C"
 
 cdx() {cd $1; ls -l;}; alias cd="cdx"
 
-alias voidfs="sudo mount 192.168.1.11:/srv/nfs/tristan /home/tristan/nfs"
+alias voidfs="sudo mount -t cifs //192.168.1.11/tristan share -o username=tristan,uid=1000,gid=1000"
 alias setperformance="sudo cpupower frequency-set -g performance"
 alias setpowersave="sudo cpupower frequency-set -g powersave"
 alias backlight="sudo tee /sys/class/backlight/intel_backlight/brightness <<<"

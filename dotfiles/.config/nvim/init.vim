@@ -31,12 +31,11 @@ noremap <C-j> <C-w>h
 
 " Plugins installation with vim-plug
 call plug#begin(stdpath('data') . '/plugged')
+	Plug 'andreshazard/vim-freemarker',
   Plug 'scrooloose/nerdtree', { 'on': 'NERDTree' }
   Plug 'sheerun/vim-polyglot'
-	"Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'vim-scripts/vim-autopep8', { 'on': 'Autopep8' }
   Plug 'rhysd/vim-clang-format',
-  "Plug 'zchee/deoplete-clang'
   Plug 'junegunn/goyo.vim'
 	Plug 'alvan/vim-closetag'
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
