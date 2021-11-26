@@ -21,14 +21,15 @@ alias vim="nvim +NERDTree"
 alias config="cd ~/repos/public/dotfiles && nvim +NERDTree install.sh"
 alias syncaur="pushd ~/repos/perso/dotfiles/ && ./syncaur.sh && popd"
 alias blackarchsearch="pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u | grep"
-alias tmp="nvim ~/storage/private/TMP.txt"
-alias todo="nvim ~/storage/private/TODO.txt"
-alias toread="nvim ~/storage/private/TOREAD.txt"
-alias towatch="nvim ~/storage/private/TOWATCH.txt"
+alias tmp="nvim ~/share/TMP.txt"
+alias todo="nvim ~/share/TODO.txt"
+alias toread="nvim ~/share/TOREAD.txt"
+alias towatch="nvim ~/share/TOWATCH.txt"
 alias cdsvpn="pushd ~/repos/cdiscount/docker-citrix && docker run --rm --privileged -it --network=host --env-file=config --name=citrix_vpn --volume=/etc/resolv.conf:/etc/resolv.conf docker-registry.cdweb.biz/sre/citrix:b4533cb"
 alias screenshot='grim -g "$(slurp)" /tmp/$(date +screenshot-%s.png)'
 #alias virsh="virsh --connect qemu:///system"
 alias safeshutdown='voidpush && sudo pacman -Syu && shutdown now'
+alias msum="grep '^#[#]* '" # markdown summary
 
 # ALIASES DOCKER
 alias dockerstart="sudo systemctl start docker"

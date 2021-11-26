@@ -8,3 +8,4 @@ config_version: 2
 settings:
   content.notifications.enabled:
     http://localhost:8025: true
+    https://tryhackme.com: true
