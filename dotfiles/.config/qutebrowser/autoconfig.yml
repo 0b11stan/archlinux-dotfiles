@@ -9,3 +9,5 @@ settings:
   content.notifications.enabled:
     http://localhost:8025: true
     https://tryhackme.com: true
+  content.register_protocol_handler:
+    https://outlook.office.com?mailtouri=%25s: true

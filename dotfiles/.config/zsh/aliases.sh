@@ -43,3 +43,5 @@ alias dcdv="docker-compose down --volumes"
 alias dstopall='docker stop docker ps -a -q'
 alias drmall='docker rm docker ps -a -q'
 alias dgenocide="dstopall && drmall"
+
+alias cme="podman run -it --rm --entrypoint /usr/local/bin/cme --volume ~/.config/crackmapexec:/root/.cme docker.io/byt3bl33d3r/crackmapexec"

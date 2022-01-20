@@ -16,12 +16,14 @@
 ### OUTPUT CONFIGURATION
 
     # wallpaper
-    #output * bg ~/.config/sway/wallpapers/evil_corp.png fill
-    #exec ls ~/storage/wallpapers/*.??g | sort -R | head -n 1 | xargs swaybg -i
+    #output * bg ~/share/wallpapers/minimalistic-glider.jpg fill
+    #exec ls ~/share/wallpapers/*.??g | sort -R | head -n 1 | xargs swaybg -i
 
 		output DP-3 	pos 0		 0
 		output DP-4 	pos 1920 0
 		output eDP-1	pos 3840 0
+
+    output DP-5 transform 270
 
     # exemple of output configuration
     #output DP-3 	pos 0		 0
@@ -45,7 +47,6 @@
 
 
 ### INPUT CONFIGURATION
-    
     # configure keyboard layout
 		input "type:keyboard" {
         xkb_layout fr
