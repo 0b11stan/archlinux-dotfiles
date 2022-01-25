@@ -115,6 +115,8 @@ config.set('content.javascript.enabled', True, 'https://*.caisse-epargne.fr/*')
 config.set('content.javascript.enabled', True, 'https://*.github.com/*')
 config.set('content.javascript.enabled', True, 'https://*.reddit.com/*')
 config.set('content.javascript.enabled', True, 'https://*.root-me.org/*')
+config.set('content.javascript.enabled', True, 'https://progressbarserver.appspot.com/')
+
 
 # By default all javascript content is disabled
 config.set('content.javascript.enabled', False)
