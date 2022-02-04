@@ -5,7 +5,7 @@ export BROWSER=/usr/bin/qutebrowser
 export SAVEHIST=100000
 export HISTSIZE=100000
 export HISTFILE=~/.zsh_history
-export PATH=$PATH:~/.cargo/bin:~/go/bin:~/.local/share/gem/ruby/3.0.0/bin
+export PATH=$PATH:~/.cargo/bin:~/go/bin:~/.local/share/gem/ruby/3.0.0/bin:~/.local/bin
 
 # enable screen sharing for webrtc
 export XDG_SESSION_TYPE=wayland
