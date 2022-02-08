@@ -6,8 +6,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Load plugins
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source ~/sources/public/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source ~/sources/public/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # Load custom conf and aliases
 source ~/.vars.sh || "File ~/.vars.sh not found"
@@ -20,9 +20,9 @@ autoload -Uz compinit && compinit
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-if [ "$(tty)" = "/dev/tty1" ]; then
+if [[ "$(tty)" = "/dev/tty1" && $SELF_IS_GRAPHIC -eq 0 ]]; then
   test $SELF_IS_VIRTUALIZED -eq 1 && export WLR_RENDERER_ALLOW_SOFTWARE=1
   exec sway
 else
-  source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+  source ~/sources/public/powerlevel10k/powerlevel10k.zsh-theme
 fi
