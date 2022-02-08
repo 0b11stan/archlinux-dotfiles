@@ -5,14 +5,11 @@ export BROWSER=/usr/bin/qutebrowser
 export SAVEHIST=100000
 export HISTSIZE=100000
 export HISTFILE=~/.zsh_history
-export PATH=$PATH:~/.emacs.d/bin:~/.cargo/bin
+export PATH=$PATH:~/.cargo/bin:~/go/bin:~/.local/share/gem/ruby/3.0.0/bin:~/.local/bin
 
 # enable screen sharing for webrtc
 export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=sway
-
-# doom emacs
-export PATH=$PATH:~/.emacs.d/bin/
 
 # cdiscount specific
 export CMDB_HOST=https://this.subdomain.com

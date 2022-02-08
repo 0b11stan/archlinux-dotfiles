@@ -10,7 +10,7 @@ source ~/sources/public/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/sources/public/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # Load custom conf and aliases
-source ~/.vars.sh || "File ~/.vars.sh not found"
+source ~/.vars.sh || echo "File ~/.vars.sh not found"
 source ~/.config/zsh/config.sh
 source ~/.config/zsh/aliases.sh
 
