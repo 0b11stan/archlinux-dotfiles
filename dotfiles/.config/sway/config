@@ -5,7 +5,7 @@
     set $down k
     set $up l
     set $right m
-    set $term alacritty
+    set $term foot
 		set $menu bemenu-run --bottom -m 1 -p '>' \
 			--fn 'Roboto 10' --tf=#ffffff --ff=#ffffff \
 			--hf=#ffffff --tb=#26292e --nb=#26292e --fb=#26292e --hb=#64727d -H 25 \
