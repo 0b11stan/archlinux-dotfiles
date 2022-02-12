@@ -1,0 +1,23 @@
+My defined filesystem hierarchy:
+
+```
+home
+└── tristan
+    ├── vpn                 # mes fichiers de configuration VPN
+    ├── vms                 # mes machines virtuelles
+    ├── aur                 # conditionné à archlinux
+    │   └── ...
+    ├── sources             # toutes les sources (dépôts git)
+    │   ├── public          # tout ce qui est publique (github)
+    │   │   └── ...
+    │   ├── perso           # mes propres projets publiques
+    │   │   ├── dotfiles    # le dossier des dotfiles
+    │   │   └── ...
+    │   ├── private         # mes propres projets non publiques
+    │   │   └── ...
+    │   └── ...
+    ├── config              # ( => .config)
+    │   └── ...
+    └── remote              # SMB à distance
+        └── ...
+```
