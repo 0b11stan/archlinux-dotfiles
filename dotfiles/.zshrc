@@ -5,9 +5,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+ZSH_PLUGIN_FOLDER=~/sources/public/
+
 # Load plugins
-source ~/sources/public/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source ~/sources/public/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source $ZSH_PLUGIN_FOLDER/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source $ZSH_PLUGIN_FOLDER/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # Load custom conf and aliases
 source ~/.vars.sh || echo "File ~/.vars.sh not found"
@@ -24,5 +26,5 @@ if [[ "$(tty)" = "/dev/tty1" && $SELF_IS_GRAPHIC -eq 0 ]]; then
   test $SELF_IS_VIRTUALIZED -eq 1 && export WLR_RENDERER_ALLOW_SOFTWARE=1
   exec sway
 else
-  source ~/sources/public/powerlevel10k/powerlevel10k.zsh-theme
+  source $ZSH_PLUGIN_FOLDER/powerlevel10k/powerlevel10k.zsh-theme
 fi

@@ -6,7 +6,11 @@ source dotfiles/.vars.sh || {
 
 mkdir ~/AUR ~/.config &>/dev/null
 
-zshplugins="zsh-autosuggestions zsh-theme-powerlevel10k"
+
+for plugin in $(cat ./zsh_plugins ); do
+    repo="https://github.com/$plugin.git"
+    git clone $repo ~/sources/public/$(echo "$plugin" | cut -d '/' -f2)
+done
 
 requirements="git neovim python python-pynvim zsh base-devel fzf clang
               rsync autopep8 stow alacritty bat"
