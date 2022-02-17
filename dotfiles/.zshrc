@@ -22,7 +22,7 @@ autoload -Uz compinit && compinit
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-if [[ "$(tty)" = "/dev/tty1" && $SELF_IS_GRAPHIC -eq 0 ]]; then
+if [[ "$(tty)" = "/dev/tty1" && $SELF_IS_GRAPHIC -eq 1 ]]; then
   test $SELF_IS_VIRTUALIZED -eq 1 && export WLR_RENDERER_ALLOW_SOFTWARE=1
   exec sway
 else
