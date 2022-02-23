@@ -8,6 +8,8 @@ alias detox="detox -s lower *"
 alias tree="tree -C"
 
 cdx() {cd $1; ls -l;}; alias cd="cdx"
+cve() {cat $(find /home/tristan/sources/public/cvelist -name "CVE-$1-$2.json") \
+  | jq -r '.description.description_data | .[].value'}
 
 alias voidfs="sudo mount -t cifs //192.168.1.11/tristan remote -o username=tristan,uid=1000,gid=1000"
 alias setperformance="sudo cpupower frequency-set -g performance"
