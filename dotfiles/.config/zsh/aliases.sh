@@ -49,3 +49,4 @@ alias dgenocide="dstopall && drmall"
 alias cme="podman run -it --rm --entrypoint /usr/local/bin/cme --volume ~/.config/crackmapexec:/root/.cme docker.io/byt3bl33d3r/crackmapexec"
 # podman build -t searchsploit -f searchsploit.dockerfile
 alias searchsploit="podman run --entrypoint /usr/bin/searchsploit searchsploit"
+alias fuzzjq="jq -r '.results | .[] | .input.FUZZ'"

@@ -23,7 +23,7 @@
 		output DP-4 	pos 1920 0
 		output eDP-1	pos 3840 0
 
-    output DP-5 transform 270
+    output HDMI-A-2 transform 270 mode 1680x1050@60Hz
 
     # exemple of output configuration
     #output DP-3 	pos 0		 0
