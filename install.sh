@@ -1,28 +1,79 @@
 #!/bin/bash
 
-source dotfiles/.vars.sh || {
-  echo "File dotfiles/vars.sh not found" && exit 1;
+entry() {
+  if [[ "$1" == "-h" || $# -ne 1 ]]; then
+    echo "Usage: $0 <cli|gui>"
+    exit
+  fi
+
+  mkdir ~/AUR ~/sources ~/.config &>/dev/null
+
+  install_target cli
+  if [[ $1 == "gui" ]]; then install_target gui; fi
+  src_install zsh
+  sudo chsh -s /usr/bin/zsh $USER
+
+  git config --global user.email tristan@tic.sh
+  git config --global user.name "Tristan Auvinet"
+
+  stow -t /home/tristan/ dotfiles
 }
 
-mkdir ~/AUR ~/.config &>/dev/null
+install_target() {
+  pac_install $1
+  pac_clean $1
 
+  aur_install $1
+  aur_clean $1
 
-for plugin in $(cat ./zsh_plugins ); do
-    repo="https://github.com/$plugin.git"
-    git clone $repo ~/sources/public/$(echo "$plugin" | cut -d '/' -f2)
-done
+  go_install $1
+  #go_clean $1
+}
 
-requirements="git neovim python python-pynvim zsh base-devel fzf clang
-              rsync autopep8 stow alacritty bat"
+install_aur_package() {
+  git clone https://aur.archlinux.org/$1.git ~/AUR/$1 &>/dev/null && {
+    pushd ~/AUR/$1 \
+      && echo installing $1... \
+      && makepkg -si --noconfirm \
+    popd 
+  } || echo $1 already installed
+}
 
-test $SELF_IS_GRAPHIC -eq 1 && \
-  graphics="sway ttf-hack nodejs bemenu waybar qt5-wayland qutebrowser"
+pac_install() {
+  sudo pacman -S --needed - < pkg-pac-$1.txt
+}
 
-sudo pacman -S --needed --noconfirm $requirements $zshplugins $graphics \
-  && ./syncaur.sh \
-  && git config --global user.email $SELF_EMAIL \
-  && git config --global user.name "Tristan Pinaudeau"
-  
-sudo chsh -s /usr/bin/zsh $USER
+pac_clean() {
+  sudo pacman -Rsu $(comm -23 <(pacman -Qq | sort) <(sort pkg-pac-$1.txt))
+}
 
-stow -t /home/tristan/ dotfiles
+aur_install() {
+  missing=$(sort <(ls --color=never ~/AUR/) pkg-aur-$1.txt | uniq -u)
+  for package in $missing; do install_aur_package $package; done
+  install_aur_package pkg-aur-$1.txt
+}
+
+aur_clean() {
+  for package in $(ls ~/AUR | grep -vf pkg-aur-$1.txt); do
+    sudo pacman -Rns $package && rm -vrf ~/AUR/$package
+  done
+}
+
+go_install() {
+  for id in $(cat ./pkg-go-$1.txt); do
+    go install github.com/$id@latest
+  done
+}
+
+go_clean() {
+  echo 'go_clean: Not Implemented yet...'
+}
+
+src_install() {
+  for id in $(cat ./src-$1.txt ); do
+      repo="https://github.com/$id.git"
+      git clone $repo ~/sources/public/$(echo "$id" | cut -d '/' -f2)
+  done
+}
+
+entry $@

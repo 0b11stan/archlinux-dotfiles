@@ -1,0 +1,12 @@
+autopep8
+base-devel
+bat
+clang
+ctags
+git
+go
+neovim
+python
+python-pynvim
+rsync
+stow

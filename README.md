@@ -30,3 +30,20 @@ TODO :
 ------
 
 -	Add a bootstrap script only for terminal sessions without the arch specifics
+
+Ressources
+----------
+
+-	[Install Arch Linux on a removable medium](https://wiki.archlinux.org/title/Install_Arch_Linux_on_a_removable_medium)
+-	[Install Arch Linux from existing Linux](https://wiki.archlinux.org/title/Install_Arch_Linux_from_existing_Linux)
+-	[Install packages from a list](https://wiki.archlinux.org/title/Pacman_Tips#Install_packages_from_a_list)
+
+Les packages suivants sont peut-être nécessaire pour un setup thinkpad + dock:
+
+-	dockd
+-	libthinkpad
+
+Les packages aur pour la gui:
+
+-	swaylock-blur-bin
+-	tutanota-desktop-bin

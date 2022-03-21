@@ -1,0 +1,7 @@
+alacritty
+bemenu
+qt5-wayland
+qutebrowser
+sway
+waybar
+wl-clipboard
