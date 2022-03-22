@@ -11,3 +11,5 @@ python-pynvim
 rsync
 stow
 zsh
+go
+tree

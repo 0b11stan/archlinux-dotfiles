@@ -8,6 +8,6 @@ RUN useradd -m tristan \
 WORKDIR /home/tristan
 USER tristan
 
-RUN mkdir -p /home/tristan/sources/public
+RUN mkdir -p /home/tristan/sources/0b11stan
 
 CMD bash

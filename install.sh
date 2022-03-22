@@ -5,13 +5,13 @@ entry() {
     echo "Usage: $0 <cli|gui>"
     exit
   fi
-
+  
   mkdir ~/AUR ~/sources ~/.config &>/dev/null
 
+  sudo pacman -Syu --noconfirm
   install_target cli
   if [[ $1 == "gui" ]]; then install_target gui; fi
-  src_install zsh
-  sudo chsh -s /usr/bin/zsh tristan
+  zsh_install
 
   git config --global user.email tristan@tic.sh
   git config --global user.name "Tristan Auvinet"
@@ -70,10 +70,14 @@ go_clean() {
 }
 
 src_install() {
-  for id in $(cat ./src-$1.txt ); do
-      repo="https://github.com/$id.git"
-      git clone $repo ~/sources/public/$(echo "$id" | cut -d '/' -f2)
-  done
+  git clone https://github.com/$1.git ~/sources/$1 2>/dev/null || {
+    echo $1 already installed
+  }
+}
+
+zsh_install() {
+  for src in $(cat src-zsh.txt | cut -d '/' -f 1,2); do src_install $src; done
+  sudo chsh -s /usr/bin/zsh tristan
 }
 
 entry $@
