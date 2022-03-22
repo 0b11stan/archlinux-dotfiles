@@ -11,7 +11,7 @@ entry() {
   install_target cli
   if [[ $1 == "gui" ]]; then install_target gui; fi
   src_install zsh
-  sudo chsh -s /usr/bin/zsh $USER
+  sudo chsh -s /usr/bin/zsh tristan
 
   git config --global user.email tristan@tic.sh
   git config --global user.name "Tristan Auvinet"
@@ -20,14 +20,14 @@ entry() {
 }
 
 install_target() {
-  pac_install $1
   pac_clean $1
+  pac_install $1
 
-  aur_install $1
   aur_clean $1
+  aur_install $1
 
-  go_install $1
   #go_clean $1
+  go_install $1
 }
 
 install_aur_package() {
@@ -40,22 +40,22 @@ install_aur_package() {
 }
 
 pac_install() {
-  sudo pacman -S --needed - < pkg-pac-$1.txt
+  sudo pacman --noconfirm -S --needed - < pkg-pac-$1.txt
 }
 
 pac_clean() {
-  sudo pacman -Rsu $(comm -23 <(pacman -Qq | sort) <(sort pkg-pac-$1.txt))
+  sudo pacman --noconfirm -Rsu $(comm -23 <(pacman -Qq | sort) <(sort pkg-pac-$1.txt))
 }
 
 aur_install() {
-  missing=$(sort <(ls --color=never ~/AUR/) pkg-aur-$1.txt | uniq -u)
+  missing=$(sort -u <(ls --color=never ~/AUR/) <(cat pkg-aur-$1.txt))
   for package in $missing; do install_aur_package $package; done
-  install_aur_package pkg-aur-$1.txt
 }
 
 aur_clean() {
   for package in $(ls ~/AUR | grep -vf pkg-aur-$1.txt); do
-    sudo pacman -Rns $package && rm -vrf ~/AUR/$package
+    sudo pacman -Rns $package
+    rm -vrf ~/AUR/$package
   done
 }
 
