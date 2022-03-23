@@ -8,7 +8,7 @@ alias detox="detox -s lower *"
 alias tree="tree -C"
 
 cdx() {cd $1; ls -l;}; alias cd="cdx"
-cve() {cat $(find /home/tristan/sources/public/cvelist -name "CVE-$1-$2.json") \
+cve() {cat $(find /home/tristan/sources/0b11stan/cvelist -name "CVE-$1-$2.json") \
   | jq -r '.description.description_data | .[].value'}
 
 alias voidfs="sudo mount -t cifs //192.168.1.11/tristan remote -o username=tristan,uid=1000,gid=1000"
@@ -20,7 +20,7 @@ alias temperature="curl http://v2.wttr.in/"
 alias lf="find . -not -path '*/\.*' -type f"
 alias hail="ls -hAil"
 alias vim="nvim +NERDTree"
-alias config="cd ~/sources/public/dotfiles && nvim +NERDTree install.sh"
+alias config="cd ~/sources/0b11stan/dotfiles && nvim +NERDTree install.sh"
 alias syncaur="pushd ~/sources/perso/dotfiles/ && ./syncaur.sh && popd"
 alias blackarchsearch="pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u | grep"
 alias tmp="nvim ~/remote/TMP.txt"
