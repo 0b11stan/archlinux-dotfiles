@@ -16,3 +16,7 @@
 #    && echo 'ADD SSH KEY IN GIT SERVERS :' \
 #    && cat ~/.ssh/id_rsa.pub
 #fi
+
+useradd -m tristan
+echo 'tristan ALL=(ALL) ALL' > /etc/sudoers.d/10-tristan
+passwd tristan

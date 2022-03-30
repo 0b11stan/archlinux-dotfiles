@@ -21,7 +21,6 @@ alias lf="find . -not -path '*/\.*' -type f"
 alias hail="ls -hAil"
 alias vim="nvim +NERDTree"
 alias config="cd ~/sources/0b11stan/dotfiles && nvim +NERDTree install.sh"
-alias syncaur="pushd ~/sources/perso/dotfiles/ && ./syncaur.sh && popd"
 alias blackarchsearch="pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u | grep"
 alias tmp="nvim ~/remote/TMP.txt"
 alias todo="nvim ~/remote/TODO.txt"
@@ -50,3 +49,9 @@ alias cme="podman run -it --rm --entrypoint /usr/local/bin/cme --volume ~/.confi
 # podman build -t searchsploit -f searchsploit.dockerfile
 alias searchsploit="podman run --entrypoint /usr/bin/searchsploit searchsploit"
 alias fuzzjq="jq -r '.results | .[] | .input.FUZZ'"
+
+# Deprecated commands
+netstat='NOP: use `ss` instead (https://dougvitale.wordpress.com/2011/12/21/deprecated-linux-networking-commands-and-their-replacements)'
+arp='NOP: use `ip neighbor` instead (https://dougvitale.wordpress.com/2011/12/21/deprecated-linux-networking-commands-and-their-replacements)'
+ifconfig='NOP: use `ip address` or `ip link` instead (https://dougvitale.wordpress.com/2011/12/21/deprecated-linux-networking-commands-and-their-replacements)'
+route='NOP: use `ip route` instead (https://dougvitale.wordpress.com/2011/12/21/deprecated-linux-networking-commands-and-their-replacements)'
