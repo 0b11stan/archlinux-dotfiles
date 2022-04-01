@@ -18,6 +18,7 @@ man-db
 man-pages
 neovim
 networkmanager
+openssh
 python
 python-pynvim
 rsync

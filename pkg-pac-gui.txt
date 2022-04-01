@@ -3,5 +3,6 @@ bemenu
 qt5-wayland
 qutebrowser
 sway
+ttf-hack
 waybar
 wl-clipboard

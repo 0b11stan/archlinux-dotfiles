@@ -9,8 +9,11 @@ entry() {
   mkdir ~/AUR ~/sources ~/.config &>/dev/null
 
   sudo pacman -Syu --noconfirm
-  install_target cli
-  if [[ $1 == "gui" ]]; then install_target gui; fi
+  if [[ "$1" == "gui" ]]; then 
+    install_target '*'
+  else
+    install_target cli
+  fi
   zsh_install
 
   git config --global user.email tristan@tic.sh
@@ -20,14 +23,14 @@ entry() {
 }
 
 install_target() {
-  pac_clean $1
-  pac_install $1
+  pac_clean "$1"
+  pac_install "$1"
 
-  aur_clean $1
-  aur_install $1
+  aur_clean "$1"
+  aur_install "$1"
 
-  #go_clean $1
-  go_install $1
+  #go_clean "$1"
+  go_install "$1"
 }
 
 install_aur_package() {
@@ -40,7 +43,7 @@ install_aur_package() {
 }
 
 pac_install() {
-  sudo pacman --noconfirm -S --needed - < pkg-pac-$1.txt
+  sudo pacman --noconfirm -S --needed - < <(cat pkg-pac-$1.txt)
 }
 
 pac_clean() {
