@@ -4,5 +4,6 @@ qt5-wayland
 qutebrowser
 sway
 ttf-hack
+ttf-nerd-fonts-symbols-mono
 waybar
 wl-clipboard
