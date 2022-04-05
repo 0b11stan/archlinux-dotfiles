@@ -14,7 +14,7 @@ entry() {
   else
     install_target cli
   fi
-  zsh_install
+  sudo chsh -s /usr/bin/zsh tristan
 
   git config --global user.email tristan@tic.sh
   git config --global user.name "Tristan Auvinet"
@@ -29,10 +29,10 @@ install_target() {
   aur_clean "$1"
   aur_install "$1"
 
-  #go_clean "$1"
+  go_clean "$1"
   go_install "$1"
 
-  for src in $(cat src-$1.txt); do src_install $src; done
+  for src in $(cat src-$1.txt | cut -d '/' -f 1,2); do src_install $src; done
 }
 
 install_aur_package() {
@@ -59,6 +59,7 @@ aur_install() {
 
 aur_clean() {
   for package in $(ls ~/AUR | grep -vf pkg-aur-$1.txt); do
+    echo removing $1 ...
     sudo pacman -Rns $package
     rm -vrf ~/AUR/$package
   done
@@ -78,11 +79,6 @@ src_install() {
   git clone https://github.com/$1.git ~/sources/$1 2>/dev/null || {
     echo $1 already installed
   }
-}
-
-zsh_install() {
-  for src in $(cat src-zsh.txt | cut -d '/' -f 1,2); do src_install $src; done
-  sudo chsh -s /usr/bin/zsh tristan
 }
 
 entry $@
