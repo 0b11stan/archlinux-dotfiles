@@ -39,7 +39,7 @@ install_aur_package() {
   git clone https://aur.archlinux.org/$1.git ~/AUR/$1 &>/dev/null && {
     pushd ~/AUR/$1 \
       && echo installing $1... \
-      && makepkg -si --noconfirm \
+      && makepkg -si --noconfirm;
     popd 
   } || echo $1 already installed
 }
@@ -49,7 +49,8 @@ pac_install() {
 }
 
 pac_clean() {
-  sudo pacman --noconfirm -Rsu $(comm -23 <(pacman -Qq | sort) <(sort pkg-pac-$1.txt))
+  sudo pacman --noconfirm -Rsu \
+    $(comm -23 <(pacman -Qq | sort) <(sort pkg-pac-$1.txt pkg-aur-$1.txt))
 }
 
 aur_install() {
@@ -66,9 +67,7 @@ aur_clean() {
 }
 
 go_install() {
-  for id in $(cat ./pkg-go-$1.txt); do
-    go install github.com/$id@latest
-  done
+  for id in $(cat ./pkg-go-$1.txt); do go install github.com/$id@latest; done
 }
 
 go_clean() {
