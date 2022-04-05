@@ -13,3 +13,7 @@ for plugin in $(cat ./zsh_plugins ); do
     cd ~/sources/public/$(echo "$plugin" | cut -d '/' -f2)
     git pull
 done
+
+# pass git pull ??
+
+# update zsh plugins

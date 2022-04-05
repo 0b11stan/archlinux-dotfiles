@@ -30,9 +30,6 @@ entry() {
       ~/.password-store || echo '! Error ! did you exchange ssh keys ?' && exit
   }
 
-  echo 'update password store ...'
-  pushd ~/.password-store && git pull; popd
-
   echo 'enable rootless podman pods ...'
   echo 'tristan:100000:65536' | sudo tee /etc/subuid /etc/subgid > /dev/null
 }
