@@ -6,7 +6,7 @@ entry() {
     exit
   fi
   
-  mkdir ~/AUR ~/sources ~/.config &>/dev/null
+  mkdir ~/AUR ~/sources ~/.config ~/.ssh &>/dev/null
 
   sudo pacman -Syu --noconfirm
   if [[ "$1" == "gui" ]]; then 
@@ -14,12 +14,27 @@ entry() {
   else
     install_target cli
   fi
+
   sudo chsh -s /usr/bin/zsh tristan
+
+  stat ~/.ssh/id_rsa &>/dev/null || ssh-keygen -f ~/.ssh/id_rsa
 
   git config --global user.email tristan@tic.sh
   git config --global user.name "Tristan Auvinet"
 
   stow -t /home/tristan/ dotfiles
+  
+  stat ~/.password-store 2>/dev/null || {
+    echo 'init password store ...'
+    git clone ssh://git@git.tic.sh:2222/0b11stan/password-store.git \
+      ~/.password-store || echo '! Error ! did you exchange ssh keys ?' && exit
+  }
+
+  echo 'update password store ...'
+  pushd ~/.password-store && git pull; popd
+
+  echo 'enable rootless podman pods ...'
+  echo 'tristan:100000:65536' | sudo tee /etc/subuid /etc/subgid > /dev/null
 }
 
 install_target() {
@@ -37,10 +52,7 @@ install_target() {
 
 install_aur_package() {
   git clone https://aur.archlinux.org/$1.git ~/AUR/$1 &>/dev/null && {
-    pushd ~/AUR/$1 \
-      && echo installing $1... \
-      && makepkg -si --noconfirm;
-    popd 
+    pushd ~/AUR/$1 && echo installing $1... && makepkg -si --noconfirm; popd
   } || echo $1 already installed
 }
 

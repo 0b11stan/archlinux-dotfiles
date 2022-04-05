@@ -20,6 +20,8 @@ neovim
 networkmanager
 nmap
 openssh
+pass
+podman
 python
 python-pynvim
 rsync
