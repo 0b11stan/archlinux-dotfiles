@@ -24,7 +24,7 @@ entry() {
 
   stow -t /home/tristan/ dotfiles
   
-  stat ~/.password-store 2>/dev/null || {
+  stat ~/.password-store &>/dev/null || {
     echo 'init password store ...'
     git clone ssh://git@git.tic.sh:2222/0b11stan/password-store.git \
       ~/.password-store || echo '! Error ! did you exchange ssh keys ?' && exit
@@ -71,8 +71,9 @@ aur_install() {
 }
 
 aur_clean() {
-  for package in $(ls ~/AUR | grep -vf pkg-aur-$1.txt); do
-    echo removing $1 ...
+  exclude=$(cat pkg-aur-*.txt | tr $'\n' '|' | head -c -1)
+  for package in $(ls ~/AUR/ | grep -Ev $exclude); do
+    echo removing $package ...
     sudo pacman -Rns $package
     rm -vrf ~/AUR/$package
   done

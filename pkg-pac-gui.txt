@@ -1,5 +1,5 @@
 alacritty
-bemenu
+bemenu-wayland
 qt5-wayland
 qutebrowser
 signal-desktop
