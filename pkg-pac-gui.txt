@@ -2,6 +2,7 @@ alacritty
 bemenu
 qt5-wayland
 qutebrowser
+signal-desktop
 sway
 ttf-hack
 ttf-nerd-fonts-symbols-mono

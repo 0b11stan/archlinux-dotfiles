@@ -31,6 +31,8 @@ install_target() {
 
   #go_clean "$1"
   go_install "$1"
+
+  for src in $(cat src-$1.txt); do src_install $src; done
 }
 
 install_aur_package() {
