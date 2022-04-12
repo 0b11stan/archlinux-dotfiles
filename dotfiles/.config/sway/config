@@ -39,11 +39,11 @@
 
     # lock the screen after 2 minutes of inactivity and shut the screen after another 2 minutes
     # lock the screen before going to sleep volontary
-    exec swayidle -w \
-			timeout 120 "swaylock-blur --blur-sigma=$blurlevel" \
-			timeout 240 'swaymsg "output * dpms off"' \
-			resume 'swaymsg "output * dpms on"' \
-			before-sleep "swaylock-blur --blur-sigma=$blurlevel"
+#    exec swayidle -w \
+#			timeout 120 "swaylock-blur --blur-sigma=$blurlevel" \
+#			timeout 240 'swaymsg "output * dpms off"' \
+#			resume 'swaymsg "output * dpms on"' \
+#			before-sleep "swaylock-blur --blur-sigma=$blurlevel"
 
 
 ### INPUT CONFIGURATION
@@ -108,7 +108,8 @@
     bindsym $mod+Shift+e exec swaynag -t warning -m 'Closing session ?' -b 'bye' 'swaymsg exit'
 
     # lock the screen
-    bindsym $mod+Shift+x exec swaylock-blur --blur-sigma=$blurlevel
+#    bindsym $mod+Shift+x exec swaylock-blur --blur-sigma=$blurlevel
+    bindsym $mod+Shift+x exec swaylock -c '#000100'
 
 
 ### WINDOW SHORTCUTS

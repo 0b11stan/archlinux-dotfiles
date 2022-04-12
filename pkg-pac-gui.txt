@@ -4,7 +4,10 @@ qt5-wayland
 qutebrowser
 signal-desktop
 sway
+swaylock
+tigervnc
 ttf-hack
 ttf-nerd-fonts-symbols-mono
 waybar
 wl-clipboard
+xorg-xwayland
