@@ -1,5 +1,6 @@
 alacritty
 bemenu-wayland
+discord
 qt5-wayland
 qutebrowser
 signal-desktop
