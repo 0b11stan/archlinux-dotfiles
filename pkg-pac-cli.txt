@@ -21,6 +21,7 @@ neovim
 networkmanager
 nmap
 openssh
+openvpn
 pass
 podman
 python
