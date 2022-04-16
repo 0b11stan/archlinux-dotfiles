@@ -27,6 +27,7 @@ podman
 python
 python-pynvim
 rsync
+rust
 stow
 sudo
 texinfo
