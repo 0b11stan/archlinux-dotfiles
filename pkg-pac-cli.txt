@@ -32,4 +32,5 @@ stow
 sudo
 texinfo
 tree
+unzip
 zsh
