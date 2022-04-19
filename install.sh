@@ -21,6 +21,7 @@ entry() {
 
   git config --global user.email tristan@tic.sh
   git config --global user.name "Tristan Auvinet"
+  git config --global pull.rebase false
 
   stow -t /home/tristan/ dotfiles
   
