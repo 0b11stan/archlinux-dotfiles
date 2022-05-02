@@ -3,6 +3,7 @@ autopep8
 base
 base-devel
 bat
+binwalk
 clang
 ctags
 efibootmgr
@@ -33,4 +34,5 @@ sudo
 texinfo
 tree
 unzip
+vim
 zsh
