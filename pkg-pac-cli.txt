@@ -29,6 +29,8 @@ python
 python-pynvim
 rsync
 rust
+sdl2
+sdl2_ttf
 stow
 sudo
 texinfo
