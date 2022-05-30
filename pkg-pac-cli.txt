@@ -24,3 +24,6 @@ stow
 texinfo
 tree
 zsh
+sudo
+openssh
+gnu-netcat
