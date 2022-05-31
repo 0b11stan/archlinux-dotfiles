@@ -10,10 +10,13 @@ ctags
 efibootmgr
 git
 github-cli
+gnu-netcat
 go
 grub
+hq
 intel-ucode
 iproute2
+jq
 linux
 linux-firmware
 lvm2
@@ -42,6 +45,3 @@ tree
 unzip
 vim
 zsh
-sudo
-openssh
-gnu-netcat
