@@ -1,4 +1,3 @@
-alsa-utils
 amd-ucode
 autopep8
 base
@@ -30,14 +29,10 @@ openssh
 openvpn
 pass
 podman
-pulse-audio
 python
 python-pynvim
 rsync
 rust
-sdl2
-sdl2_gfx
-sdl2_ttf
 stow
 sudo
 texinfo

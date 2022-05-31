@@ -1,8 +1,13 @@
 alacritty
+alsa-utils
 bemenu-wayland
 discord
+pulse-audio
 qt5-wayland
 qutebrowser
+sdl2
+sdl2_gfx
+sdl2_ttf
 signal-desktop
 sway
 swaylock
