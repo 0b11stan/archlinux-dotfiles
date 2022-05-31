@@ -85,6 +85,8 @@ useradd -m tristan
 echo 'tristan ALL=(ALL) ALL' > /etc/sudoers.d/10-tristan
 mkdir -p /home/tristan/sources/0b11stan/
 git clone https://github.com/0b11stan/dotfiles.git /home/tristan/sources/0b11stan/dotfiles
+git submodule init
+git submodule update
 chown -R tristan:tristan /home/tristan/
 passwd tristan
 rm -r /home/bootstrap.sh
