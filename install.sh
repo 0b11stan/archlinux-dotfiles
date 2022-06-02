@@ -10,6 +10,8 @@ entry() {
 
   sudo pacman -Syu --noconfirm
   if [[ "$1" == "gui" ]]; then 
+    sudo usermod -aG seat tristan
+    sudo systemctl enable seatd
     install_target '*'
   else
     install_target cli
