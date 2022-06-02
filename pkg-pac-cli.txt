@@ -33,6 +33,7 @@ python
 python-pynvim
 rsync
 rust
+sipcalc
 stow
 sudo
 texinfo

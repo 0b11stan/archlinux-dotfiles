@@ -17,6 +17,9 @@ entry() {
     install_target cli
   fi
 
+  # for wireshark
+  sudo usermod -aG wireshark tristan
+
   sudo chsh -s /usr/bin/zsh tristan
 
   stat ~/.ssh/id_rsa &>/dev/null || ssh-keygen -f ~/.ssh/id_rsa

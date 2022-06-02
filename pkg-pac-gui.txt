@@ -14,6 +14,6 @@ tigervnc
 ttf-hack
 ttf-nerd-fonts-symbols-mono
 waybar
-wireshark-gui
+wireshark-qt
 wl-clipboard
 xorg-xwayland
