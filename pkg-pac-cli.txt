@@ -39,4 +39,5 @@ texinfo
 tree
 unzip
 vim
+wireshark-cli
 zsh

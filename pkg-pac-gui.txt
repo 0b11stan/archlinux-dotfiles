@@ -2,7 +2,6 @@ alacritty
 alsa-utils
 bemenu-wayland
 discord
-pulse-audio
 qt5-wayland
 qutebrowser
 sdl2
@@ -15,5 +14,6 @@ tigervnc
 ttf-hack
 ttf-nerd-fonts-symbols-mono
 waybar
+wireshark-gui
 wl-clipboard
 xorg-xwayland
