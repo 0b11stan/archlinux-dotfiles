@@ -1,6 +1,8 @@
 dotfiles
 ========
 
+**DEPRECATED : [I switched to nixos](https://github.com/0b11stan/nixconfig)**
+
 ![Screenshot](/rice.png)
 
 | Component         | Sources                                                   |
